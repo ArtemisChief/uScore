@@ -183,6 +183,37 @@ namespace μScore
                 return;
             }
 
+            #region 检查是否有权限删除该Score
+            string chkAuthority = "select createrID " +
+                                  "from score " +
+                                  "where scoreID=" + scoreID + ";";
+            int createrID = 0;
+            using (MySqlCommand cmd = new MySqlCommand(chkAuthority, Sign.conn))
+            {
+                MySqlDataReader myReader = null;
+                try
+                {
+                    myReader = cmd.ExecuteReader();
+                    myReader.Read();
+                    createrID = myReader.GetInt32(0);
+                    if (Sign.userID != createrID)
+                    {
+                        showInfo("You don't have the authority to delete this score", Theme.MainColor4);
+                        return;
+                    }
+                }
+                catch (MySqlException exception)
+                {
+                    MessageBox.Show(exception.ToString());
+                    return;
+                }
+                finally
+                {
+                    myReader.Close();
+                }
+            }
+            #endregion
+
             #region 检查该Score对应的Album是否还有其他Score相应，返回对应的数量和albumID
 
             string chkAlbum = "select albumID " +

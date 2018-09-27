@@ -29,8 +29,9 @@ namespace μScore
         {
             scoreDataGrid.Rows.Clear();
             string selectAll =
-                "SELECT scoreTitle, musicianName, sourceTitle, albumTitle, createDate " +
+                "SELECT scoreTitle, musicianName, sourceTitle, albumTitle, userName ,createDate " +
                 "FROM score " +
+                "join users on score.createrID = users.userID " +
                 "join musician on score.musicianID = musician.musicianID " +
                 "join source on score.sourceID = source.sourceID " +
                 "join album on score.albumID = album.albumID " +

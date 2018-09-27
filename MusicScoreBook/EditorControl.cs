@@ -470,23 +470,25 @@ namespace μScore
             string insertScore;
             if (demoTxtBox.Text.Equals("Demo Address (Keep this if none)"))
                 insertScore =
-                    "insert into score (scoreTitle, content, tonalityID, sourceID, albumID, musicianID) values ('"
-                    + titleTxtBox.Text.Replace("'", "''") + "', '"
-                    + Content.Text + "', "
-                    + (TonalityComboBox.SelectedIndex + 1) + ", '"
-                    + sourceID + "', '"
-                    + albumID + "', '"
-                    + musicianID + "'); Select @@Identity;";
-            else
-                insertScore =
-                    "insert into score (scoreTitle, content, tonalityID, sourceID, albumID, musicianID, demoAddress) values ('"
+                    "insert into score (scoreTitle, content, tonalityID, sourceID, albumID, musicianID, createrID) values ('"
                     + titleTxtBox.Text.Replace("'", "''") + "', '"
                     + Content.Text + "', "
                     + (TonalityComboBox.SelectedIndex + 1) + ", '"
                     + sourceID + "', '"
                     + albumID + "', '"
                     + musicianID + "', '"
-                    + demoTxtBox.Text + "'); Select @@Identity;";
+                    + Sign.userID +"'); Select @@Identity;";
+            else
+                insertScore =
+                    "insert into score (scoreTitle, content, tonalityID, sourceID, albumID, musicianID, demoAddress, createrID) values ('"
+                    + titleTxtBox.Text.Replace("'", "''") + "', '"
+                    + Content.Text + "', "
+                    + (TonalityComboBox.SelectedIndex + 1) + ", '"
+                    + sourceID + "', '"
+                    + albumID + "', '"
+                    + musicianID + "', '"
+                    + demoTxtBox.Text +"', '"
+                    + Sign.userID +"'); Select @@Identity;";
 
             using (MySqlCommand cmd4 = new MySqlCommand(insertScore, Sign.conn))
             {
@@ -528,6 +530,37 @@ namespace μScore
                 showInfo("This score doesn't exist", Theme.MainColor4);
                 return;
             }
+
+            #region 检查是否有权限删除该Score
+            string chkAuthority = "select createrID " +
+                              "from score " +
+                              "where scoreID=" + scoreID + ";";
+            int createrID = 0;
+            using (MySqlCommand cmd = new MySqlCommand(chkAuthority, Sign.conn))
+            {
+                MySqlDataReader myReader = null;
+                try
+                {
+                    myReader = cmd.ExecuteReader();
+                    myReader.Read();
+                    createrID = myReader.GetInt32(0);
+                    if (Sign.userID != createrID)
+                    {
+                        showInfo("You don't have the authority to delete this score", Theme.MainColor4);
+                        return;
+                    }
+                }
+                catch (MySqlException exception)
+                {
+                    MessageBox.Show(exception.ToString());
+                    return;
+                }
+                finally
+                {
+                    myReader.Close();
+                }
+            }
+            #endregion
 
             #region 检查该Score对应的Album是否还有其他Score相应，返回对应的数量和albumID
 

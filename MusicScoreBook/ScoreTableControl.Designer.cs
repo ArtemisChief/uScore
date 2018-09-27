@@ -40,11 +40,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.scoreDataGrid = new CCWin.SkinControl.SkinDataGridView();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Musician = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Source = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Album = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.skinFlowLayoutPanel1 = new CCWin.SkinControl.SkinFlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.newBtn = new CCWin.SkinControl.SkinButton();
@@ -53,6 +48,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.infoLabel = new System.Windows.Forms.Label();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Musician = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Source = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Album = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.scoreDataGrid)).BeginInit();
             this.skinFlowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -148,62 +148,6 @@
             this.scoreDataGrid.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.scoreDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.scoreDataGrid_CellDoubleClick);
             // 
-            // Title
-            // 
-            this.Title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Title.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Title.Frozen = true;
-            this.Title.HeaderText = "Title";
-            this.Title.Name = "Title";
-            this.Title.ReadOnly = true;
-            this.Title.Width = 230;
-            // 
-            // Musician
-            // 
-            this.Musician.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Musician.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Musician.Frozen = true;
-            this.Musician.HeaderText = "Musician";
-            this.Musician.Name = "Musician";
-            this.Musician.ReadOnly = true;
-            this.Musician.Width = 185;
-            // 
-            // Source
-            // 
-            this.Source.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Source.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Source.Frozen = true;
-            this.Source.HeaderText = "Source";
-            this.Source.Name = "Source";
-            this.Source.ReadOnly = true;
-            this.Source.Width = 185;
-            // 
-            // Album
-            // 
-            this.Album.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Album.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Album.Frozen = true;
-            this.Album.HeaderText = "Album";
-            this.Album.Name = "Album";
-            this.Album.ReadOnly = true;
-            this.Album.Width = 160;
-            // 
-            // Date
-            // 
-            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Date.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Date.Frozen = true;
-            this.Date.HeaderText = "Date Time";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Width = 300;
-            // 
             // skinFlowLayoutPanel1
             // 
             this.skinFlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
@@ -272,8 +216,8 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("思源黑体 Regular", 16F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(285, 55);
-            this.label2.Margin = new System.Windows.Forms.Padding(122, 55, 0, 0);
+            this.label2.Location = new System.Drawing.Point(295, 55);
+            this.label2.Margin = new System.Windows.Forms.Padding(132, 55, 0, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 33);
             this.label2.TabIndex = 14;
@@ -284,7 +228,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("思源黑体 Regular", 16F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(469, 55);
+            this.label3.Location = new System.Drawing.Point(479, 55);
             this.label3.Margin = new System.Windows.Forms.Padding(80, 55, 0, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 33);
@@ -296,7 +240,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("思源黑体 Regular", 16F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(656, 55);
+            this.label4.Location = new System.Drawing.Point(666, 55);
             this.label4.Margin = new System.Windows.Forms.Padding(102, 55, 0, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 33);
@@ -308,12 +252,12 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("思源黑体 Regular", 16F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(814, 55);
-            this.label5.Margin = new System.Windows.Forms.Padding(77, 55, 0, 0);
+            this.label5.Location = new System.Drawing.Point(844, 55);
+            this.label5.Margin = new System.Windows.Forms.Padding(97, 55, 0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 33);
+            this.label5.Size = new System.Drawing.Size(111, 33);
             this.label5.TabIndex = 17;
-            this.label5.Text = "Create Date";
+            this.label5.Text = "Uploader";
             // 
             // infoLabel
             // 
@@ -325,6 +269,62 @@
             this.infoLabel.Name = "infoLabel";
             this.infoLabel.Size = new System.Drawing.Size(0, 33);
             this.infoLabel.TabIndex = 12;
+            // 
+            // Title
+            // 
+            this.Title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Title.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Title.Frozen = true;
+            this.Title.HeaderText = "Title";
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            this.Title.Width = 240;
+            // 
+            // Musician
+            // 
+            this.Musician.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Musician.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Musician.Frozen = true;
+            this.Musician.HeaderText = "Musician";
+            this.Musician.Name = "Musician";
+            this.Musician.ReadOnly = true;
+            this.Musician.Width = 185;
+            // 
+            // Source
+            // 
+            this.Source.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Source.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Source.Frozen = true;
+            this.Source.HeaderText = "Source";
+            this.Source.Name = "Source";
+            this.Source.ReadOnly = true;
+            this.Source.Width = 185;
+            // 
+            // Album
+            // 
+            this.Album.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Album.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Album.Frozen = true;
+            this.Album.HeaderText = "Album";
+            this.Album.Name = "Album";
+            this.Album.ReadOnly = true;
+            this.Album.Width = 180;
+            // 
+            // Date
+            // 
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Date.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Date.Frozen = true;
+            this.Date.HeaderText = "Uploader";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Width = 300;
             // 
             // ScoreTableControl
             // 
@@ -353,11 +353,11 @@
         private System.Windows.Forms.Label label5;
         private CCWin.SkinControl.SkinButton newBtn;
         private System.Windows.Forms.Label infoLabel;
+        private CCWin.SkinControl.SkinFlowLayoutPanel skinFlowLayoutPanel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn Musician;
         private System.Windows.Forms.DataGridViewTextBoxColumn Source;
         private System.Windows.Forms.DataGridViewTextBoxColumn Album;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private CCWin.SkinControl.SkinFlowLayoutPanel skinFlowLayoutPanel1;
     }
 }
