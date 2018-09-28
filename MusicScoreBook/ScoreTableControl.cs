@@ -140,5 +140,11 @@ namespace μScore
             newBtn.MouseBaseColor = Theme.MainColor3;
             newBtn.DownBaseColor = Theme.MainColor3;
         }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            Main.searchBox.Text = "";
+            getScore("");
+        }
     }
 }

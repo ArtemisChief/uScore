@@ -149,6 +149,42 @@ namespace μScore
                 return;
             }
 
+            #region 检查是否有权限修改该Score
+
+            if (scoreID != 0)
+            {
+                string chkAuthority = "select createrID " +
+                                      "from score " +
+                                      "where scoreID=" + scoreID + ";";
+                int createrID = 0;
+                using (MySqlCommand cmd = new MySqlCommand(chkAuthority, Sign.conn))
+                {
+                    MySqlDataReader myReader = null;
+                    try
+                    {
+                        myReader = cmd.ExecuteReader();
+                        myReader.Read();
+                        createrID = myReader.GetInt32(0);
+                        if (Sign.userID != createrID)
+                        {
+                            showInfo("You don't have the authority to edit this score", Theme.MainColor4);
+                            return;
+                        }
+                    }
+                    catch (MySqlException exception)
+                    {
+                        MessageBox.Show(exception.ToString());
+                        return;
+                    }
+                    finally
+                    {
+                        myReader.Close();
+                    }
+                }
+            }
+
+            #endregion
+
             string contentChange = "update score set content='" + Content.Text +
                                    "' where scoreID='" + scoreID + "';";
             using (MySqlCommand cmd = new MySqlCommand(contentChange, Sign.conn))

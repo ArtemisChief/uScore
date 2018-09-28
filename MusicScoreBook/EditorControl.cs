@@ -257,6 +257,42 @@ namespace μScore
 
             #endregion
 
+            #region 检查是否有权限修改该Score
+
+            if (scoreID != 0)
+            {
+                string chkAuthority = "select createrID " +
+                                      "from score " +
+                                      "where scoreID=" + scoreID + ";";
+                int createrID = 0;
+                using (MySqlCommand cmd = new MySqlCommand(chkAuthority, Sign.conn))
+                {
+                    MySqlDataReader myReader = null;
+                    try
+                    {
+                        myReader = cmd.ExecuteReader();
+                        myReader.Read();
+                        createrID = myReader.GetInt32(0);
+                        if (Sign.userID != createrID)
+                        {
+                            showInfo("You don't have the authority to edit this score", Theme.MainColor4);
+                            return;
+                        }
+                    }
+                    catch (MySqlException exception)
+                    {
+                        MessageBox.Show(exception.ToString());
+                        return;
+                    }
+                    finally
+                    {
+                        myReader.Close();
+                    }
+                }
+            }
+
+            #endregion
+
             #region 检查Source是否存在，不存在则添加，存在则记录sourceID
 
             int sourceID = 0;
