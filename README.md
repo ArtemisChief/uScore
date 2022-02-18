@@ -1,14 +1,16 @@
 # uScore
 A Digital Music Score Management Software For Personal Use
 
-### 主要功能介绍
-μScore 是一个在线谱册，不过不同于现有的站点式的谱册，μScore 更像一个公共仓库，每一个用户都可以增删改查乐谱内容，实现数字谱的共享，且可以将喜欢的谱子添加到自己的收藏夹内，以方便观看
-主要功能一共有以下 7 点
+Introduction in Chinese: [Click Here](https://lab-ch76.top/2018/09/%CE%BCscore/)
 
-1. 注册与登陆
-2. 浏览乐谱列表
-3. 模糊搜索
-4. 查看具体乐谱
-5. 收藏乐谱
-6. 修改/上传/删除乐谱
-7. 转调器（未完善）
+![](https://i.loli.net/2018/09/27/5bacba481d5ec.png)
+
+![](https://i.loli.net/2018/09/27/5bacf388aeaf7.png)
+
+![](https://i.loli.net/2018/09/27/5bacc0af84326.png)
+
+![](https://i.loli.net/2018/09/27/5bacf2efcb2d3.png)
+
+![](https://i.loli.net/2018/09/27/5bacc4f7bce43.png)
+
+![](https://raw.githubusercontent.com/ArtemisChief/uScore/master/img/1.png)
